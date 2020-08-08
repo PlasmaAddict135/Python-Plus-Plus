@@ -1,5 +1,3 @@
-#CURRENTLY A WIP
-count = 1
 class __prece__:
     def __init__(self, types, origin, prece: int, *ap):
         self.types = types
@@ -17,8 +15,6 @@ class __prece__:
                 if self.prece > 1:
                     print(g[org])
 
-
-#WORKING
 class __with__:
     def __init__(self, types, origin, target):
         self.types = types
@@ -38,9 +34,24 @@ class __with__:
                 except: print(f'TypeError: type "{self.types}" not found for origin, instead found "{self.origin}"')
     def __repr__(self):
         return self.origin
-
     def uncouple(self):
         g = globals()
         a = g.get(self.origin)
         b = g.get(self.target)
         g[self.origin] = un
+
+class __count__:
+    def __init__(self,x):
+        self.__x = x
+        self.counter = 0
+    def __str__(self):
+        self.counter += 1
+        return str(self.__x)
+    @property
+    def x(self):
+        self.counter_ += 1
+        return self.__x
+    @x.setter
+    def x(self, x):
+        self.__x = x
+        self.counter = 0
